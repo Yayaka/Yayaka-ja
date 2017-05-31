@@ -42,7 +42,7 @@ Yayakaプロトコルは, まだ実装されていませんが, [Yayaka.net](htt
 
 ## 貢献
 
-Yayakaプロトコルへの[貢献](CONTRIBUTING.md)は, こちらをご覧ください.
+Yayaka-jaへの[貢献](CONTRIBUTING.md)は, こちらをご覧ください.
 
 ## ライセンス
 
