@@ -53,7 +53,7 @@ Yayakaプロトコルの基本的な用語.
 
 以下のサブプロトコルは, 大文字・小文字を区別しない独自の名前空間を持っています.
 
-### [コネクションプロトコル](connection-protocol.md)
+### [通信プロトコル](connection-protocol.md)
 
 ### [メッセージプロトコル](message-protocol.md)
 

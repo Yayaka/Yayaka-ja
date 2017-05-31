@@ -6,43 +6,46 @@
 
 ### [WIP] エンドポイント
 
-"/.well-known/yayaka"のパスで提供されるかもしれません.
+"/.well-known/yayaka"のパスで提供される可能性があります.
 
 ### JSON形式
 
 パケットは, 次のプロパティを持つオブジェクトです.
 
 
-- 必須 **yayaka-version** semver  
+- MUST **yayaka-version** semver  
   Yayakaプロトコルのバージョン
 
-- 必須 **host-version** semver  
+- MUST **host-version** semver  
   ホストの仕様のバージョン
 
-- 必須 **connection-protocols** array
+- MUST **connection-protocols** array  
   次のプロパティを持つオブジェクトの配列  
   異なるバージョンの同じ通信プロトコルは許可されます.
 
-  - 必須 **version** semver  
+  - MUST **name** string  
+    通信プロトコル名
+
+  - MUST **version** semver  
     コネクションプロトコルのバージョン
 
-  - 任意 **parameters** object  
+  - MAY **parameters** object  
     コネクションプロトコルの引数
 
-- 必須 **message-protocols** array  
+- MUST **message-protocols** array  
   次のプロパティを持つオブジェクトの配列  
   異なるバージョンの同じメッセージプロトコルは許可されます.
 
-  - 必須 **name** string
+  - MUST **name** string  
     通信プロトコル名
 
-  - 必須 **version** semver  
+  - MUST **version** semver  
     メッセージプロトコルのバージョン
 
-  - 必須 **services** array  
+  - MUST **services** array  
     ホスト内で提供されているサービスの配列
 
-  - 任意 **parameters** object  
+  - SHOULD **parameters** object  
     メッセージプロトコルの引数
 
 ### 例

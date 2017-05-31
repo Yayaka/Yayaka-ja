@@ -12,25 +12,25 @@
 
 ## 階層化されたメッセージのルーティング
 
-各要求メッセージは, ルーティングのために**ホスト**, **プロトコル**, **サービス**, **アクション**キーを持っています.  
+各要求メッセージは, ルーティングのために**host**, **protocol**, **service**, **action**キーを持っています.  
 それらは, 以下の手順で適切なメッセージハンドラに送られます.
 
-1. コネクションは, 指定された**ホスト**にメッセージを送信します.
-2. **ホスト**は, 指定された**プロトコル**にメッセージをルーティングします.
-3. **プロトコル**は, 指定された**サービス**にメッセージをルーティングします.
-4. **サービス**は, 指定された**action**をハンドルするためにハンドラにメッセージをルーティングします.
+1. コネクションは, 指定された**host**にメッセージを送信します.
+2. **host**は, 指定された**protocol**にメッセージをルーティングします.
+3. **protocol**は, 指定された**service**にメッセージをルーティングします.
+4. **service**は, 指定された**action**をハンドルするためにハンドラにメッセージをルーティングします.
 
 各応答メッセージは, ルーティングのために**host**, **reply_to**キーを持っています.  
 それらは, 以下の手順で適切なメッセージ送信元に送信します.
 
-1. コネクションは, 指定された**ホスト**にメッセージを送信します.
-2. **ホスト**は, 指定された"ID"を持っているメッセージを送信元にルーティングします.
+1. コネクションは, 指定された**host**にメッセージを送信します.
+2. **host**は, 指定された"ID"を持っているメッセージを送信元にルーティングします.
 
 
 ## 検証
 
 メッセージルーティングの各層はメッセージが自分自身に宛てられているか調べるべきです(SHOULD).  
-また, **ホスト**, **プロトコル**, **サービス**, **アクション**のうち，一つ以上が不明な場合，いかなる時もメッセージを無視するかもしれません(MAY).
+また, **host**, **protocol**, **service**, **action**のうち，一つ以上が不明な場合，いかなる時もメッセージを無視するかもしれません(MAY).
 
 
 ## タイムアウト
@@ -46,37 +46,37 @@ Yayakaプロトコルは, メッセージのタイムアウトについて指定
 
 #### プロパティ
 
-- 必須 **sender** object  
+- MUST **sender** object  
   オブジェクトは次のプロパティを持ちます.
 
-  - 必須 **host** string  
+  - MUST **host** string  
     送信元のホスト
 
-  - 推奨 **protocol** string  
+  - SHOULD **protocol** string  
     送信元のプロトコル
 
-  - 推奨 **service** string  
+  - SHOULD **service** string  
     送信元のサービス
 
-- 必須 **id** string  
+- MUST **id** string  
   送信元のホスト内でユニークなID
 
-- 必須 **host** string  
+- MUST **host** string  
   宛先のホスト
 
-- 必須 **protocol** string  
+- MUST **protocol** string  
   宛先のプロトコル
 
-- 必須 **service** string  
+- MUST **service** string  
   宛先のサービス
 
-- 必須 **action** string  
+- MUST **action** string  
   メッセージの説明の為のテキスト
 
-- 必須 **payload** object  
+- MUST **payload** object  
   メッセージ本体
 
-- 非推奨 上記以外のプロパティ
+- SHOULD NOT 上記以外のプロパティ
 
 #### 例
 
@@ -102,41 +102,41 @@ Yayakaプロトコルは, メッセージのタイムアウトについて指定
 
 要求メッセージとの大きな違いは，応答メッセージは**reply_to**プロパティを持っていることと, **action**プロパティを持っていないことです.
 
-返信メッセージの**送信元**プロパティにプロパティが含稀ている場合, 応答メッセージは**プロトコル**と**サービス**プロパティを持つべきです(SHOULD).
+返信メッセージの**sernder**プロパティにプロパティが含稀ている場合, 応答メッセージは**protocol**と**sercice**プロパティを持つべきです(SHOULD).
 
 #### プロパティ
 
-- 必須 **sender** object  
-  必須, 任意, 推奨オブジェクトは, 次のプロパティを持っています.
+- MUST **sender** object  
+  MUST, MAY, SHOULDオブジェクトは, 次のプロパティを持っています.
 
-  - 必須 **host** string  
+  - MUST **host** string  
     送信元のホスト
 
-  - 推奨 **protocol** string  
+  - SHOULD **protocol** string  
     送信元のプロトコル
 
-  - 推奨 **service** string  
+  - SHOULD **service** string  
     送信元のサービス
 
-- 必須 **id** string  
+- MUST **id** string  
   送信元のホスト内でユニークなID
 
-- 必須 **reply-to** string  
+- MUST **reply-to** string  
   メッセージの返信用ID
 
-- 必須 **host** string  
+- MUST **host** string  
   宛先のホスト
 
-- 任意 **protocol** string  
+- MAY **protocol** string  
   宛先のプロトコル
 
-- 任意 **service** string  
+- MAY **service** string  
   宛先のサービス
 
-- 必須 **payload** object  
+- MUST **payload** object  
   メッセージ本体
 
-- 非推奨 上記以外のプロパティ
+- SHOULD NOT 上記以外のプロパティ
 
 #### 例
 
