@@ -1,8 +1,8 @@
 # Yayakaプロトコル
 
-[Yayaka Protocol (en)](https://github.com/Yayaka/Yayaka)
+[Yayaka Protocol (en)](https://github.com/Yayaka/Yayaka)の[9b05ded](https://github.com/Yayaka/Yayaka/tree/9b05ded5d80ae87ada892dee13ace3b98b0c24d6)までを訳しています.
 
-Yayakaプロトコルは, 高度に分散化された, Webアプリケーションの為のプロトコルです.
+Yayakaプロトコルは, 高度に分散化された, Webアプリケーションの為のプロトコルです.  
 それぞれのインスタンスは, 分散化されたWebアプリケーションのすべての機能を実装する必要はありません.
 
 Yayakaプロトコルは, [HVDSGM (ja)](https://hakabahitoyo.wordpress.com/2017/05/22/hvdsgm/)の影響を受けています.
@@ -21,9 +21,9 @@ Yayakaプロトコルは, [HVDSGM (ja)](https://hakabahitoyo.wordpress.com/2017/
 
 ### Yayakaサービス
 
-Yayakaプロトコルは, いくつかのYayakaサービスを持っています.
-Yayakaサービスは特別ではありません. しかし, それらは通常一つのWebサービスとして一体化しています.
-Yayakaプロトコルは, それらを複数のホストに分散させることが出来ます.
+Yayakaプロトコルは, いくつかのYayakaサービスを持っています.  
+Yayakaサービスは特別ではありません. しかし, それらは通常一つのWebサービスとして一体化しています.  
+Yayakaプロトコルは, それらを複数のホストに分散させることが出来ます.  
 
 
 ### 階層化されたサブプロトコル
@@ -33,7 +33,7 @@ Yayakaプロトコルは, それらを複数のホストに分散させること
 
 ## 仕様
 
-- [WIP] [Yayakaプロトコル 仕様書](specification/index.md)
+- [Yayakaプロトコル 仕様書](specification/index.md)
 
 
 ## 実装
